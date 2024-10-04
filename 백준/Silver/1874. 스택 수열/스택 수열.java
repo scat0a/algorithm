@@ -8,7 +8,7 @@ public class Main {
         Stack<Integer> st = new Stack();
         ArrayList<String> ans = new ArrayList();
         int n = sc.nextInt();
-        int[] a = new int[n + 1]; // 0을 사용하지 않기 때문에 +1을 해줌
+        int[] a = new int[n + 1];
         int m = 1;
         for (int i = 1; i <= n; i++) {
             a[i] = sc.nextInt();
