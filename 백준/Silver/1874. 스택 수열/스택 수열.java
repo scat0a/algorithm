@@ -1,36 +1,38 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Stack<Integer> st = new Stack();
-        ArrayList<String> ans = new ArrayList();
-        int n = sc.nextInt();
-        int[] a = new int[n + 1];
+        Stack<Integer> stack = new Stack<>();
+        List<String> list = new ArrayList<>();
+        int cnt = sc.nextInt();
+        int[] array = new int[cnt + 1];
         int m = 1;
-        for (int i = 1; i <= n; i++) {
-            a[i] = sc.nextInt();
+        for (int i = 1; i <= cnt; i++) {
+            array[i] = sc.nextInt();
         }
 
-        for (int i = 1; i <= n; i++) {
-            st.push(i);
-            ans.add("+");
-            while (!st.empty() && st.peek() == a[m]) {
-                st.pop();
-                ans.add("-");
+        for (int i = 1; i <= cnt; i++) {
+            stack.push(i);
+            list.add("+");
+            while (!stack.empty() && stack.peek() == array[m]) {
+                stack.pop();
+                list.add("-");
                 m++;
             }
         }
 
-        if (st.empty()) {
-            for (String an : ans) {
-                System.out.println(an);
+        if (stack.empty()) {
+            for (String s : list) {
+                System.out.println(s);
             }
-        } else {
+        }
+        if (!stack.empty()) {
             System.out.println("NO");
         }
-
     }
 }
+
